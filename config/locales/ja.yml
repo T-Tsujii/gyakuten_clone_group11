@@ -1,0 +1,5 @@
+ja:
+ activerecord:
+    models:
+      comment: 'コメント'
+      admin_user: '管理者'
