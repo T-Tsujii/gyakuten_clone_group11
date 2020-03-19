@@ -16,6 +16,9 @@ gem 'activeadmin'
 gem 'devise'
 #日本語化gem
 gem 'rails-i18n'
+# deviseの日本語化
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 
 group :development, :test do

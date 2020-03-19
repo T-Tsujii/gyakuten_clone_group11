@@ -1,0 +1,23 @@
+@import "bootstrap/scss/bootstrap";
+
+.login_form_style{
+  width:400px;
+  padding:70px 0 45px 0;
+    h2{
+      padding: 20px 0 10px 0;
+    }
+  }
+
+.field {
+  margin-bottom: 1rem;
+  input{
+    background-color: #E8F0FE;
+    height: 50px;
+    font-size: 17px;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    color: #CED4DA;
+  }
+}
+
