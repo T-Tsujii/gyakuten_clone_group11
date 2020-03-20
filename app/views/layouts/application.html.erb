@@ -17,8 +17,9 @@
       <%= link_to "ログイン", new_user_session_path %>
       <%= link_to "新規登録", new_user_registration_path %>
     <% end %>
-  <div class="container login_form_style">
-    <%= yield %>
+    <div class="container login_form_style">
+    <%= render 'devise/shared/error_messages_notice' %>
+      <%= yield %>
     </div>
   </body>
 </html>
