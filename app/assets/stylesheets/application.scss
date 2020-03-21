@@ -1,1 +1,26 @@
 @import "bootstrap/scss/bootstrap";
+
+.container-style{
+  padding: 90px 0 60px 0;
+  width: 400px;
+  margin: 0 auto;
+  h1{
+    font-size: 30px;
+    padding: 20px 0 10px 0;
+  }
+
+  .form-control-style{
+    height: 50px;
+    font-size: 17px;
+    background-color: #E8F0FE;
+  }
+
+  .alert-notice {
+    @extend .alert-info;
+  }
+
+  .alert-alert {
+    @extend .alert-danger;
+  }
+}
+
