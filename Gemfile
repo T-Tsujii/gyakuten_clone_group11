@@ -18,7 +18,7 @@ gem 'devise'
 gem 'rails-i18n'
 # deviseの日本語化
 gem 'devise-i18n'
-gem 'devise-i18n-views'
+gem 'devise-bootstrap-views', '~> 1.0'
 
 
 group :development, :test do

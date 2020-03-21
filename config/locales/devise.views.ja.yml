@@ -52,7 +52,8 @@ ja:
         sign_up: "アカウント登録"
     sessions:
       new:
-        sign_in: "ログインする"
+        sign_in: "ログイン"
+        sign_in_btn: "ログインする"
     shared:
       links:
         back: "戻る"
