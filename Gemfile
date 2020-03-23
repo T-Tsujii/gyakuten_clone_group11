@@ -19,7 +19,8 @@ gem 'rails-i18n'
 # deviseの日本語化
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
-
+#CSVインポートの出力の色つけ
+gem 'colorize'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
