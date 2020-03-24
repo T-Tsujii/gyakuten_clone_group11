@@ -21,6 +21,10 @@ gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
 #CSVインポートの出力の色つけ
 gem 'colorize'
+# markdown
+gem 'redcarpet', '~> 2.3.0'
+# シンタックスハイライト
+gem 'coderay'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
