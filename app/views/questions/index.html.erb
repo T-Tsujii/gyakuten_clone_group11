@@ -1,3 +1,10 @@
+<%= form_for @question, url: "/questions" , html: { method: :post } do |f| %>
+  <h1>新規投稿</h1>
+  <p>【質問】</p><p><%= f.text_area :title %></p>
+  <p>【詳細】</p><p><%= f.text_area :detail, rows: 10 %></p>
+  <button type="button" class="btn btn-primary btn-sm">送信</button>
+<% end %>
+
 <div id="container">
   <section id="questions">
     <div class="container">
