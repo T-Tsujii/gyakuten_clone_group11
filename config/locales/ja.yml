@@ -4,6 +4,10 @@ ja:
     models:
       comment: 'コメント'
       admin_user: '管理者'
+    attributes:
+      question:
+        title: '【質問】'
+        detail: '【詳細】'
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -113,7 +117,7 @@ ja:
     format: "%{attribute}%{message}"
     messages:
       accepted: を受諾してください
-      blank: を入力してください
+      blank: は空欄にできません
       confirmation: と%{attribute}の入力が一致しません
       empty: を入力してください
       equal_to: は%{count}にしてください

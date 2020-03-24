@@ -5,7 +5,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    Question.create(question_params)
+    @question = Question.create(question_params)
+    if @question.save
+      redirect_to :action => "index"
+    else
+      render :index
+    end
   end
 
   private
@@ -13,4 +18,5 @@ class QuestionsController < ApplicationController
   def question_params
       params.require(:question).permit(:title, :detail)
   end
+  
 end
