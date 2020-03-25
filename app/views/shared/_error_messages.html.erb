@@ -1,0 +1,12 @@
+<div id="error_explanation">
+  <% if @question.errors.any? %>
+    <div class="alert alert-danger">
+      <p><%= @question.errors.count %>つのエラーがあります</p>
+    </div>
+    <ul>
+      <% @question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

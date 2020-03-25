@@ -1,25 +1,45 @@
 <div id="container">
+  <section id="question_form">
+    <div class="question_form-container">
+      <%= form_with model: @question, local: true do |f| %>
+        <h1>新規投稿</h1>
+        <%= render 'shared/error_messages', model: f.object %>
+        <div class="form-group">
+          <%= f.label :title, "【質問】" %>
+          <%= f.text_area :title, class: 'form-control', rows:3 %>
+        </div>
+        <div class="form-group">
+          <%= f.label :detail, "【詳細】" %>
+          <%= f.text_area :detail, class: 'form-control', rows:5 %>
+        </div>
+        <%= f.submit "送信", class: 'btn btn-primary btn-block',data: {confirm: "新規投稿しますか?"} %>
+      <% end %>
+    </div>
+  </section>
+
   <section id="questions">
     <div class="container">
-      <% @questions.each do |question| %>
-        <div class="questions-container">
-          <a href="/questions/<%= question[:id] %>">
-            <div class="question">
-              <div class="row">
-                <div class="col-md-7">
-                  <div class="title-container">
-                    <p class="title"><%= question.title.truncate(40) %></p>
+      <% if @questions.present? %>
+        <% @questions.each do |question| %>
+          <div class="questions-container">
+            <a href="/questions/<%= question[:id] %>">
+              <div class="question">
+                <div class="row">
+                  <div class="col-md-7">
+                    <div class="title-container">
+                      <p class="title"><%= question.title.truncate(40) %></p>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-5">
-                  <div class="info">
-                    <p>質問日　<%= l question.updated_at, format: :default %></p>
+                  <div class="col-md-5">
+                    <div class="info">
+                      <p>質問日　<%= l question.updated_at, format: :default %></p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </a>
-        </div>
+            </a>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </section>
