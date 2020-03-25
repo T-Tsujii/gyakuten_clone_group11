@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to :action => "index"
     else
+      @questions = Question.all.order(updated_at: :desc)
       render :index
     end
   end
@@ -18,5 +19,5 @@ class QuestionsController < ApplicationController
   def question_params
       params.require(:question).permit(:title, :detail)
   end
-  
+
 end
