@@ -1,15 +1,23 @@
 @import "bootstrap/scss/bootstrap";
 @import "questions";
 @import "error_messages";
-
+@import "movies";
 .container-style{
-  padding: 90px 0 60px 0;
-  width: 80%;
-  max-width: 700px;
+
+  padding: 50px 0 60px 0;
+  width: 796.5px;
+
   margin: 0 auto;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
   h1{
     font-size: 25px;
     padding: 0 0 10px 0;
+  }
+
+  h2 {
+    padding: 40px 0px 10px 0px;
+    font-size: 3em;
   }
 
   .form-control-style{
