@@ -16,12 +16,10 @@
     </div>
 
     <hr>
-
+    <% @solutions.each do |solution| %>
+      <%= solution.detail %>
+    <% end %>
     <div class="solution">
-      <% @solutions.each do |solution| %>
-        <%= solution.detail %>
-      <% end %>
-
       <%= form_with model: [@question, @solution], local: true do |f| %>
         <div class="form-group">
           <%= f.label "【回答投稿】" %>

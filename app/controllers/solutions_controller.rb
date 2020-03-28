@@ -3,8 +3,7 @@ class SolutionsController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
     @solution = Solution.new(solution_params)
-    @solutions = Solution.where(question_id: @question.id)
-    if @solution.save
+    if @solution.save!
       redirect_to question_path(@question)
     else
       render template: "questions/show"
