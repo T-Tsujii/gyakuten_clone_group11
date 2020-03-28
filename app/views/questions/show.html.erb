@@ -18,12 +18,8 @@
     <hr>
 
     <div class="solution">
-    <% if @question.solutions.any? %>
       <% @solutions.each do |solution| %>
         <%= solution.detail %>
-      <% end %>
-      <% else %>
-      <P>No solution </P>
       <% end %>
 
       <%= form_with model: [@question, @solution], local: true do |f| %>
