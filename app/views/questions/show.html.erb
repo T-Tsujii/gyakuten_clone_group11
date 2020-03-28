@@ -23,9 +23,8 @@
       <% end %>
 
       <%= form_with model: [@question, @solution], local: true do |f| %>
-        <%= f.hidden_field :question_id, { value: @question.id } %>
         <div class="form-group">
-          <%= f.label "【質問投稿】" %>
+          <%= f.label "【回答投稿】" %>
           <%= f.text_area :detail, class: 'form-control'%>
         </div>
         <div class="fonr-group">

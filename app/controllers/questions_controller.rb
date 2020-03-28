@@ -16,8 +16,8 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @solution = Solution.new
-    @solutions = Solution.all
+    @solution = Solution.new(id: @question.id)
+    @solutions = Solution.where(id: @question.id)
   end
 
   private

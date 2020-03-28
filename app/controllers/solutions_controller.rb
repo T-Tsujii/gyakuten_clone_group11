@@ -2,9 +2,9 @@ class SolutionsController < ApplicationController
 
   def create
     @question = Question.find(params[:question_id])
-    @solution = Solution.new
-    @solutions = Solution.all
-    if @solution.save(solution_params)
+    @solution = Solution.new(solution_params)
+    @solutions = Solution.where(question_id: @question.id)
+    if @solution.save
       redirect_to question_path(@question)
     else
       render template: "questions/show"
@@ -14,6 +14,6 @@ class SolutionsController < ApplicationController
   private
 
   def solution_params
-    params.require(:solution).permit(:detail, :question_id)
+    params.require(:solution).permit(:detail)
   end
 end
