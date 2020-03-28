@@ -18,7 +18,24 @@
     <hr>
 
     <div class="solution">
-        <h3>【回答】</h3>
+    <% if @question.solutions.any? %>
+      <% @solutions.each do |solution| %>
+        <%= solution.detail %>
+      <% end %>
+      <% else %>
+      <P>No solution </P>
+      <% end %>
+
+      <%= form_with model: [@question, @solution], local: true do |f| %>
+        <%= f.hidden_field :question_id, { value: @question.id } %>
+        <div class="form-group">
+          <%= f.label "【質問投稿】" %>
+          <%= f.text_area :detail, class: 'form-control'%>
+        </div>
+        <div class="fonr-group">
+          <%= f.submit "送信", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
