@@ -2,8 +2,7 @@ class SolutionsController < ApplicationController
 
   def create
     @question = Question.find(params[:question_id])
-    @solution = Solution.new(solution_params)
-    @solution.question_id = @question.id
+    @solution = @question.solutions.build(solution_params)
     if @solution.save
       redirect_to question_path(@question)
     else
