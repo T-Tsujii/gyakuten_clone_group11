@@ -1,0 +1,36 @@
+<div id="question-container">
+  <div class="container">
+
+
+    <div class="title">
+      <h3>【質問】</h3>
+      <%= @question.title %>
+    </div>
+
+    <hr>
+
+    <div class="detail">
+      <h3>【詳細】</h3>
+      <p>エラーの内容</p>
+      <%= markdown(@question.detail).html_safe %>
+    </div>
+
+    <hr>
+    <div class="solution">
+    <% if @solutions.present? %>
+    <h3>【回答】</h3>
+    <% end %>
+    <% @solutions.each do |solution| %>
+      <%= solution.detail %>
+    <% end %>
+      <%= form_with model: [@question, @solution], local: true do |f| %>
+        <div class="form-group">
+          <%= f.label :detail,  "【回答投稿】", class: 'h3' %>
+          <p>【回答】</p>
+          <%= f.text_area :detail, class: 'form-control', rows: 5 %>
+        </div>
+          <%= f.submit "送信", class: 'btn btn-primary btn-block' %>
+      <% end %>
+    </div>
+  </div>
+</div>

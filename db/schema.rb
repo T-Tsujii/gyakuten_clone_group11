@@ -69,6 +69,14 @@ ActiveRecord::Schema.define(version: 2020_04_02_140002) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "solutions", force: :cascade do |t|
+    t.text "detail", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "question_id", null: false
+    t.index ["question_id"], name: "index_solutions_on_question_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -81,4 +89,5 @@ ActiveRecord::Schema.define(version: 2020_04_02_140002) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "solutions", "questions"
 end

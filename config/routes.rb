@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :questions, only: %i(index create)
+  resources :questions, only: %i(index create show) do
+    resources :solutions, only: [:create]
+  end
   resources :aws_texts, only: %i(index show)
   resources :movies, only: %i(index)
   resources :phps, only: %i(index)
