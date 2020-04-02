@@ -1,16 +1,2 @@
-<div class="text-center">
-  <div class="col-xs-12">
-    <% @phps.each do |php| %>
-    <div class="php-contents">
-      <div class="php-title">
-        <p><%= php.title %></p>
-      </div>
-        <div class="youtube-container">
-        <iframe id="player" type="text/html" width="640" height="390" src="<%= php.url %>"  frameborder="0"></iframe>
-      </div>
-    </div>
-    <% end %>
-  </div>
-</div>
-
+<%= render partial: 'shared/sample_movies', collection: @phps %>
 <%= paginate @phps %>
