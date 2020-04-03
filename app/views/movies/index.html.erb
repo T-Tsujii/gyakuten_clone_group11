@@ -1,16 +1,2 @@
-<div class="text-center">
-  <div class="col-xs-12">
-    <% @movies.each do |movie| %>
-    <div class="movie-contents">
-      <div class="movie-title">
-        <p><%= movie.title %></p>
-      </div>
-        <div class="youtube-container">
-        <iframe id="player" type="text/html" width="640" height="390" src="<%= movie.url %>"  frameborder="0"></iframe>
-      </div>
-    </div>
-    <% end %>
-  </div>
-</div>
-
+<%= render partial: 'shared/sample_movies', collection: @movies %>
 <%= paginate @movies %>
