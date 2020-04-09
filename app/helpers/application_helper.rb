@@ -45,4 +45,13 @@ module ApplicationHelper
         markdown = Redcarpet::Markdown.new(html_render, options)
         markdown.render(text)
     end
-end
+
+    def nav_color
+      if controller_name == "lines"
+        "line-nav-color"
+      else
+        "default-nav-color"
+      end
+    end
+
+  end

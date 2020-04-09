@@ -91,4 +91,28 @@ namespace :import_csv do
     end
   end
 
+  desc "LINE＠記事のCSVデータをインポートするタスク"
+  task lines: :environment do
+    path = File.join Rails.root, "db/csv_data/line_data.csv"
+    list = []
+    CSV.foreach(path, headers: true) do |row|
+      list << {
+          title: row["title"],
+          content: row["content"]
+      }
+    end
+    puts "インポート処理を開始".red
+
+    begin
+      Line.destroy_all
+
+      Line.transaction do
+        Line.create!(list)
+      end
+      puts "インポート完了!!".green
+    rescue ActiveModel::UnknownAttributeError => invalid
+      puts "インポートに失敗：UnknownAttributeError".red
+    end
+  end
+
 end
