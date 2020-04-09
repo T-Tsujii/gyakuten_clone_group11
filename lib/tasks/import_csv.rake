@@ -104,6 +104,8 @@ namespace :import_csv do
     puts "インポート処理を開始".red
 
     begin
+      Line.destroy_all
+
       Line.transaction do
         Line.create!(list)
       end
